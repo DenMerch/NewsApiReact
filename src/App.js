@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ContentLoader from 'react-content-loader'
 import axios from "axios";
-import api from './Components/NewsApi/NewsApi'
+import { fetchArticlesWithQuery } from './Components/NewsApi/NewsApi'
 
 axios.defaults.baseURL = "https://hn.algolia.com/api/v1";
 
@@ -27,9 +27,9 @@ export class App extends Component {
   async componentDidMount() {
     this.setState({ isLoading: true });
 
-    
+
     try {
-      const articles = await api.fetchArticlesWithQuery("react");
+      const articles = await fetchArticlesWithQuery("react");
       this.setState({ articles });
     } catch (error) {
       this.setState({ error });

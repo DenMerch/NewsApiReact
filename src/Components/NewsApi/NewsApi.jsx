@@ -5,7 +5,5 @@ export const fetchArticlesWithQuery = async searchQuery => {
     return await response.data.hits;
 };
 
-export default {
-    fetchArticlesWithQuery,
-};
+
 
